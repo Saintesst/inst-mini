@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome</title>
+    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/small/64/000000/fire-heart.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        [x-cloak] { display: none !important; }
+        :root {
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --secondary: #f43f5e;
+            --black: #1f2937;
+            --font1: 'Lobster', cursive;
+            --font2: 'Poppins', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font2);
+            @apply bg-gray-50;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: var(--font2);
+        }
+        
+        h1 {
+            @apply text-4xl font-bold mb-4;
+        }
+        
+        h2 {
+            @apply text-2xl font-bold mb-3;
+        }
+        
+        h3 {
+            @apply text-lg font-bold;
+        }
+        
+        .font1 {
+            font-family: var(--font1);
+        }
+        
+        .button, button, [type='submit'], [type='button'] {
+            @apply inline-flex flex-wrap items-center justify-center flex-shrink-0 text-center rounded-lg cursor-pointer px-4 min-h-[3.3rem] font-semibold shadow-sm transition-all duration-200 text-white bg-indigo-500 w-fit;
+        }
+        
+        .button:hover, button:hover, [type='submit']:hover, [type='button']:hover {
+            @apply bg-indigo-600;
+        }
+        
+        .button:active, button:active, [type='submit']:active, [type='button']:active {
+            @apply scale-95;
+        }
+        
+        .secondaryAction {
+            @apply bg-white text-gray-500 border border-gray-300;
+        }
+        
+        .secondaryAction:hover {
+            @apply bg-gray-50;
+        }
+        
+        .navitems>li>a {
+            @apply flex items-center gap-2 h-12 px-4 hover:bg-gray-700 rounded-lg transition-colors;
+        }
+        
+        .card {
+            @apply flex flex-col overflow-hidden relative rounded-xl shadow-sm mb-6 bg-white pb-4 w-full border border-gray-100;
+        }
+        
+        .hoverlist>* {
+            @apply hover:bg-gray-50 rounded-lg transition-colors duration-150;
+        }
+        
+        .hoverlist>*>a {
+            @apply flex items-center p-2;
+        }
+        
+        .highlight {
+            @apply bg-indigo-50;
+        }
+        
+        .titleBlip {
+            animation: 1s fadeIn;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            10% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .textarea, textarea, input:not([type="checkbox"]):not([type="radio"]) {
+            @apply rounded-lg px-4 py-3 bg-gray-50 border border-gray-200 focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 outline-none transition-all w-full mb-4;
+        }
+        
+        .errorlist li {
+            @apply text-rose-500 py-2 pl-4 border-l-4 border-rose-500 mb-4 bg-rose-50 rounded-r;
+        }
+        
+        .tab {
+            @apply cursor-pointer px-4 py-2 text-gray-500 bg-gray-100 rounded-lg text-center flex items-center transition-colors;
+        }
+        
+        .tab:hover {
+            @apply bg-gray-200;
+        }
+        
+        .tab.selected {
+            @apply text-white bg-indigo-500;
+        }
+        
+        .replyform textarea, .replyform input {
+            @apply px-3 py-2 text-base mb-0 h-12;
+        }
+        
+        .replyform button {
+            @apply ml-2 min-h-0;
+        }
+        
+        #profile article figure img {
+            @apply aspect-[3/2] object-cover;
+        }
+        
+        #profile article p {
+            @apply truncate leading-normal;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            @apply w-2 h-2;
+        }
+        
+        ::-webkit-scrollbar-track {
+            @apply bg-gray-100;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            @apply bg-gray-300 rounded-full;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            @apply bg-gray-400;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+{% include "includes/header.html" %}
+
+{% include "includes/hero.html" %}
+
+{% block layout %}{% endblock  %}
+    
+</body>
+</html>
