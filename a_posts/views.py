@@ -33,7 +33,7 @@ def post_create_view(request):
             website = requests.get(form.data['url'])
             sourcecode = BeautifulSoup(website.text, 'html.parser')
             
-            find_image = sourcecode.select('meta[content^="https:live.staticflickr.com/"]')
+            find_image = sourcecode.select('meta[property="og:image"]') 
             image = find_image[0]['content']
             post.image = image
             
