@@ -1,0 +1,39 @@
+Create your database before using.
+
+Short guide postgresql. linux ubuntu.
+
+1. Install PostgreSQL
+  
+  - sudo apt update && sudo apt install postgresql postgresql-contrib
+  
+2. Create Database & User
+
+  - sudo -u postgres psql
+  
+  Commands in postgresql:
+  
+  - CREATE DATABASE mydb;
+  - CREATE USER myuser WITH PASSWORD 'mypassword';
+  - ALTER ROLE myuser SET client_encoding TO 'utf8';
+  - GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+  - \q
+  
+3. Install psycopg2
+
+  - pip install psycopg2 ( in your django-project venv)
+  
+4. Update Django Settings (settings.py)
+
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'YOUR_DB_NAME',
+        'USER': 'YOUR_USERNAME',
+        'PASSWORD': 'ANY_PASSWORD',  
+        'HOST': 'localhost',
+    }
+}
+
+5. Run Migrations
+
+  - python manage.py migrate
